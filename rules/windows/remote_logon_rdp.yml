@@ -1,0 +1,24 @@
+title: Remote Interactive Logon (RDP)
+id: 5719c6a7-51f9-511e-98a4-5cd1270fae1e
+status: experimental
+description: Successful remote interactive logon can indicate lateral movement when
+  unusual.
+references:
+- https://attack.mitre.org/techniques/T1021/001/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1021.001
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    LogonType: 10
+  condition: selection
+falsepositives:
+- Remote support and administrators routinely use RDP; correlate with account, source
+  IP, time, and asset criticality.
+level: low
+x_cdl_rule_id: CDL-WIN-006

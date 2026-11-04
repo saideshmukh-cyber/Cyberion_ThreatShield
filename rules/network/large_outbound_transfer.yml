@@ -1,0 +1,23 @@
+title: Large Outbound Transfer
+id: c8cc97a8-4f6c-596c-9164-1cae8682ed32
+status: experimental
+description: Outbound transfer exceeds a configurable threshold in normalized network
+  telemetry.
+references:
+- https://attack.mitre.org/techniques/T1041/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1041
+logsource:
+  category: dns
+detection:
+  selection:
+    bytes_out|gte: 100000000
+  condition: selection
+falsepositives:
+- Backups and cloud sync can create large transfers; tune by application, destination,
+  and business schedule.
+level: medium
+x_cdl_rule_id: CDL-NET-002

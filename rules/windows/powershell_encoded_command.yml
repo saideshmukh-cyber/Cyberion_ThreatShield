@@ -1,0 +1,23 @@
+title: PowerShell Encoded Command Execution
+id: 6bd0193f-3d2f-5a99-b625-4250928f5d66
+status: experimental
+description: Process creation event where PowerShell uses an encoded-command flag.
+references:
+- https://attack.mitre.org/techniques/T1059/001/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1059.001
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    CommandLine|contains: -enc
+  condition: selection
+falsepositives:
+- A systems administrator may use encoded commands in deployment scripts; validate
+  parent process, user, and host context.
+level: high
+x_cdl_rule_id: CDL-WIN-001

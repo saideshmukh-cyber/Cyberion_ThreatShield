@@ -1,0 +1,7 @@
+source_file,event_count
+ACL_ForcePwd_SPNAdd_User_Computer_Accounts.evtx,55
+babyshark_mimikatz_powershell.evtx,33
+WinDefender_Events_1117_1116_AtomicRedTeam.evtx,11
+CA_chrome_firefox_opera_4663.evtx,5
+CA_4624_4625_LogonType2_LogonProc_chrome.evtx,4
+4794_DSRM_password_change_t1098.evtx,1

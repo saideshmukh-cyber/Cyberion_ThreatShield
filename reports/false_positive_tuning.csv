@@ -1,0 +1,4 @@
+rule_id,initial_false_positive_scenario,logic_change,effect_observed,tradeoff_accepted,evidence_reference,status
+CDL-WIN-001,TBD from real dataset,TBD after observing false positives,TBD,TBD,TBD,Not yet performed
+CDL-WIN-006,TBD from real dataset,TBD after observing false positives,TBD,TBD,TBD,Not yet performed
+CDL-NET-001,TBD from real dataset,TBD after observing false positives,TBD,TBD,TBD,Not yet performed

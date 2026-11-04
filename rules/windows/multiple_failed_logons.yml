@@ -1,0 +1,23 @@
+title: Repeated Failed Logons
+id: 29990db0-cd02-539a-bce8-b57aa78ec4e8
+status: experimental
+description: Several failed authentication events may indicate password guessing.
+references:
+- https://attack.mitre.org/techniques/T1110/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1110
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4625
+  condition: selection
+falsepositives:
+- Typing errors, expired passwords, and service accounts can create bursts; baseline
+  by account and source.
+level: medium
+x_cdl_rule_id: CDL-WIN-007

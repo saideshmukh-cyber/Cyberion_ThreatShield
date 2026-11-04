@@ -1,0 +1,23 @@
+title: Linux sudo Command Execution
+id: 1b31d9fe-aa28-5166-baea-1e8a2e2c31d4
+status: experimental
+description: sudo use may be important when it is unusual for the user or host.
+references:
+- https://attack.mitre.org/techniques/T1548/003/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1548.003
+logsource:
+  product: linux
+  service: auth
+detection:
+  selection:
+    message|contains: 'sudo:'
+  condition: selection
+falsepositives:
+- Privileged administrators routinely use sudo; baseline role, command, time, and
+  change ticket.
+level: low
+x_cdl_rule_id: CDL-LNX-002

@@ -1,0 +1,22 @@
+title: DNS Query to Unusual High-Risk TLD
+id: cc36ae29-5546-57d5-b208-40302b8e495a
+status: experimental
+description: DNS query to a configured unusual TLD may warrant review.
+references:
+- https://attack.mitre.org/techniques/T1071/004/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1071.004
+logsource:
+  category: dns
+detection:
+  selection:
+    query|endswith: .top
+  condition: selection
+falsepositives:
+- Legitimate domains can use many TLDs; this is a weak signal and must be combined
+  with reputation and host context.
+level: low
+x_cdl_rule_id: CDL-NET-001

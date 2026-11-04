@@ -1,0 +1,26 @@
+title: Repeated Failed Logons from One Source
+id: e49d6573-8494-5a50-a2ea-aae7db4e908d
+name: correlation_failed_logon_burst
+type: correlation
+status: experimental
+description: Repeated failed logons from the same source within five minutes may indicate password guessing.
+references:
+  - https://attack.mitre.org/techniques/T1110/
+author: Cyberion Defense Labs project
+date: 2026-10-28
+tags:
+  - attack.t1110
+correlation:
+  type: event_count
+  rules:
+    - 29990db0-cd02-539a-bce8-b57aa78ec4e8
+  group-by:
+    - SourceIp
+  timespan: 5m
+  condition:
+    gte: 10
+falsepositives:
+  - Legitimate user errors and misconfigured services can cause bursts; assess account diversity and source reputation.
+level: medium
+x_cdl_note: Correlation draft. Validate field mappings and backend support before deployment.
+x_cdl_rule_id: CDL-COR-001

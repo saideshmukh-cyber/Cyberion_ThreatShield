@@ -1,0 +1,23 @@
+title: Linux SSH Authentication Failure
+id: 7a354b75-0212-5fc3-bfcb-b4bc2f4f8cd0
+status: experimental
+description: SSH authentication failure observed in Linux auth logs.
+references:
+- https://attack.mitre.org/techniques/T1110/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1110
+logsource:
+  product: linux
+  service: auth
+detection:
+  selection:
+    message|contains: Failed password
+  condition: selection
+falsepositives:
+- Users mistyping passwords and scanners can generate failures; group by source and
+  target before escalation.
+level: medium
+x_cdl_rule_id: CDL-LNX-001

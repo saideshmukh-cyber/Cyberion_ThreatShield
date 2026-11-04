@@ -1,0 +1,14 @@
+technique_id,technique_name,tactic,supporting_rule_ids,coverage_status,evidence_or_gap
+T1059.001,Command and Scripting Interpreter: PowerShell,Execution,CDL-WIN-001; CDL-WIN-002,Authored; synthetic fixture only,Not validated against real dataset
+T1003.001,OS Credential Dumping: LSASS Memory,Credential Access,CDL-WIN-003,Authored; schema needs validation,Not validated against real dataset
+T1543.003,Create or Modify System Process: Windows Service,Persistence,CDL-WIN-004,Authored; synthetic fixture only,Not validated against real dataset
+T1053.005,Scheduled Task/Job: Scheduled Task,Persistence,CDL-WIN-005,Authored; synthetic fixture only,Not validated against real dataset
+T1021.001,Remote Services: Remote Desktop Protocol,Lateral Movement,CDL-WIN-006; CDL-COR-002,Authored; synthetic fixture only,Not validated against real dataset
+T1110,Brute Force,Credential Access,CDL-WIN-007; CDL-LNX-001; CDL-COR-001,Authored; synthetic fixture only,Not validated against real dataset
+T1136.001,Create Account: Local Account,Persistence,CDL-WIN-008,Authored; synthetic fixture only,Not validated against real dataset
+T1070.001,Indicator Removal: Clear Windows Event Logs,Defense Evasion,CDL-WIN-009,Authored; synthetic fixture only,Not validated against real dataset
+T1562.001,Impair Defenses: Disable or Modify Tools,Defense Evasion,CDL-WIN-010,Authored; synthetic fixture only,Not validated against real dataset
+T1548.003,Abuse Elevation Control Mechanism: Sudo and Sudo Caching,Privilege Escalation,CDL-LNX-002,Authored; schema needs validation,Not validated against real dataset
+T1071.004,Application Layer Protocol: DNS,Command and Control,CDL-NET-001; CDL-COR-003,Authored; synthetic fixture only,Not validated against real dataset
+T1041,Exfiltration Over C2 Channel,Exfiltration,CDL-NET-002,Authored; threshold illustrative,Not validated against real dataset
+T1036,Masquerading,Defense Evasion,CDL-WIN-015,Authored; schema needs validation,Not validated against real dataset

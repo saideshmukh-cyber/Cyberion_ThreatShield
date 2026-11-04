@@ -1,0 +1,27 @@
+title: RDP Logons from One Source Across Multiple Hosts
+id: 76183ab5-7854-5f6d-aebc-a9c19b433291
+name: correlation_multi_host_rdp
+type: correlation
+status: experimental
+description: RDP logons from one source IP across multiple hosts within ten minutes may indicate lateral movement.
+references:
+  - https://attack.mitre.org/techniques/T1021/001/
+author: Cyberion Defense Labs project
+date: 2026-10-28
+tags:
+  - attack.t1021.001
+correlation:
+  type: value_count
+  rules:
+    - 5719c6a7-51f9-511e-98a4-5cd1270fae1e
+  group-by:
+    - SourceIp
+  timespan: 10m
+  condition:
+    field: ComputerName
+    gte: 5
+falsepositives:
+  - IT support teams often connect to many endpoints; assess approved jump hosts and support accounts.
+level: medium
+x_cdl_note: Correlation draft. Confirm ComputerName represents the destination host in the target telemetry before deployment.
+x_cdl_rule_id: CDL-COR-002

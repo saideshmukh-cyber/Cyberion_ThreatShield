@@ -1,0 +1,28 @@
+title: Potential LSASS Credential Dumping via Process Access
+id: 6b96f3d8-2db7-4db1-9ac4-7a36d7e6a001
+status: experimental
+description: Detects Sysmon process access events targeting LSASS with access masks commonly associated with memory reading.
+author: Cyberion ThreatShield
+date: 2026/11/04
+references:
+    - https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon
+    - https://research.splunk.com/endpoint/2c365e57-4414-4540-8dc0-73ab10729996/
+tags:
+    - attack.credential_access
+    - attack.t1003.001
+logsource:
+    product: windows
+    category: process_access
+    service: sysmon
+detection:
+    selection:
+        TargetImage|endswith: '\\lsass.exe'
+        GrantedAccess:
+            - '0x1010'
+            - '0x1410'
+            - '0x1438'
+            - '0x143a'
+    condition: selection
+falsepositives:
+    - Legitimate endpoint security or diagnostic tools accessing LSASS
+level: high

@@ -1,0 +1,26 @@
+title: Repeated DNS Queries to High-Risk .top Domains
+id: 8a71b295-f1ae-5725-9a55-acd24059b866
+name: correlation_dns_beaconing
+type: correlation
+status: experimental
+description: Frequent DNS queries to the same .top domain within ten minutes may warrant beaconing analysis.
+references:
+  - https://attack.mitre.org/techniques/T1071/004/
+author: Cyberion Defense Labs project
+date: 2026-10-28
+tags:
+  - attack.t1071.004
+correlation:
+  type: event_count
+  rules:
+    - cc36ae29-5546-57d5-b208-40302b8e495a
+  group-by:
+    - query
+  timespan: 10m
+  condition:
+    gte: 30
+falsepositives:
+  - Browsers, CDNs, and endpoint agents can create frequent queries; assess periodicity and domain context.
+level: high
+x_cdl_note: Correlation draft. This detects frequent .top-domain queries, not confirmed DNS beaconing. Validate backend support before deployment.
+x_cdl_rule_id: CDL-COR-003

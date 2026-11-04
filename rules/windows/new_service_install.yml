@@ -1,0 +1,23 @@
+title: New Windows Service Installation
+id: f6dc3a7e-ca72-5011-8664-0982884b8240
+status: experimental
+description: Windows Security service-install event indicates a new service was installed.
+references:
+- https://attack.mitre.org/techniques/T1543/003/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1543.003
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 7045
+  condition: selection
+falsepositives:
+- New software and legitimate endpoint-management tools install services; verify service
+  path, signer, and change ticket.
+level: medium
+x_cdl_rule_id: CDL-WIN-004

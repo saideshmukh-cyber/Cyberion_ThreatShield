@@ -1,0 +1,23 @@
+title: Defender Real-time Monitoring Disabled
+id: 7a1a4ae2-e082-53bb-89bf-6efa2ab80bdd
+status: experimental
+description: PowerShell command attempts to disable Defender real-time monitoring.
+references:
+- https://attack.mitre.org/techniques/T1562/001/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1562.001
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    CommandLine|contains: Set-MpPreference
+  condition: selection
+falsepositives:
+- Endpoint-management scripts may adjust Defender settings; verify policy and approved
+  maintenance.
+level: high
+x_cdl_rule_id: CDL-WIN-010

@@ -1,0 +1,23 @@
+title: Executable Launched from User Temp Directory
+id: f374585b-4cc7-5274-8f52-b7e2a48c9881
+status: experimental
+description: A process image originates from a user temporary directory.
+references:
+- https://attack.mitre.org/techniques/T1036/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1036
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    Image|contains: \AppData\Local\Temp\
+  condition: selection
+falsepositives:
+- Installers and self-updaters may execute from temp; inspect signer, prevalence,
+  parent, and file reputation.
+level: medium
+x_cdl_rule_id: CDL-WIN-015

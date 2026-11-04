@@ -1,0 +1,23 @@
+title: Security Event Log Cleared
+id: 66cbb0dc-6bdb-5e3d-a490-639942a6dd92
+status: experimental
+description: Windows Security log clear event may indicate evidence destruction.
+references:
+- https://attack.mitre.org/techniques/T1070/001/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1070.001
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 1102
+  condition: selection
+falsepositives:
+- Authorized maintenance can clear logs but should be rare; confirm maintenance records
+  and collect alternate telemetry.
+level: high
+x_cdl_rule_id: CDL-WIN-009

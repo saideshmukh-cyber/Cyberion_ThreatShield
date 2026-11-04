@@ -1,0 +1,23 @@
+title: Local User Account Created
+id: 4a36f413-70a4-5e78-a679-f5f474cbbfd3
+status: experimental
+description: A local user account creation event may indicate persistence.
+references:
+- https://attack.mitre.org/techniques/T1136/001/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1136.001
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4720
+  condition: selection
+falsepositives:
+- Help desk provisioning can create users; validate approval, actor, and account naming
+  conventions.
+level: medium
+x_cdl_rule_id: CDL-WIN-008

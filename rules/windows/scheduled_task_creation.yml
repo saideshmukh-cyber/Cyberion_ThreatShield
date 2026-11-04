@@ -1,0 +1,23 @@
+title: Scheduled Task Created
+id: c674665d-16c2-51f0-a870-b1ee745c8dc4
+status: experimental
+description: Windows task creation event records a newly registered scheduled task.
+references:
+- https://attack.mitre.org/techniques/T1053/005/
+- Dataset-specific field mapping must be verified before production use.
+author: Cyberion Defense Labs project
+date: 2026/10/28
+tags:
+- attack.t1053.005
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4698
+  condition: selection
+falsepositives:
+- IT automation and software updaters create scheduled tasks; compare creator, task
+  path, and approved change records.
+level: medium
+x_cdl_rule_id: CDL-WIN-005
