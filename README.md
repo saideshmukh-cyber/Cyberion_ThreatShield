@@ -25,6 +25,17 @@ Raw EVTX files are not included in this repository.
 Rule conversion, Python tests, and SIEM validation are tracked separately.
 A successful conversion does not imply production readiness.
 
+## Testing Limitations
+
+The Python harness evaluates a limited subset of Sigma detection
+logic against JSONL fixtures.
+
+It is not a complete Sigma execution engine and does not replace
+Sigma CLI validation or SIEM testing.
+
+The LSASS unit tests verify a separate Python matching function.
+They do not prove the Sigma rule's effectiveness in Splunk.
+
 ## Disclaimer
 This is a defensive security portfolio and lab project.
 Dataset findings are not claims of a live compromise or customer incident.

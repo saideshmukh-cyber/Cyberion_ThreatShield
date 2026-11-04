@@ -5,16 +5,45 @@ import argparse, json, sys
 from pathlib import Path
 import yaml
 
+
 def values_match(event, field_expr, expected):
-    parts=field_expr.split('|')
-    field=parts[0]; modifiers=parts[1:]
-    actual=event.get(field)
-    candidates=expected if isinstance(expected,list) else [expected]
-    if actual is None: return False
+    parts = field_expr.split('|')
+    field = parts[0]
+    modifiers = parts[1:]
+
+    actual = event.get(field)
+
+    if actual is None:
+        return False
+
+    candidates = expected if isinstance(expected, list) else [expected]
+
     for candidate in candidates:
-        a=str(actual).lower(); e=str(candidate).lower()
-        ok = (e in a if 'contains' in modifiers else a.endswith(e) if 'endswith' in modifiers else float(actual) >= float(candidate) if 'gte' in modifiers else actual == candidate or a == e)
-        if ok: return True
+        actual_str = str(actual).lower()
+        # Sigma uses escaped backslashes in rule values.
+        expected_str = str(candidate).lower().replace("\\\\", "\\")
+
+        if 'contains' in modifiers:
+            ok = expected_str in actual_str
+
+        elif 'endswith' in modifiers:
+            ok = actual_str.endswith(expected_str)
+
+        elif 'startswith' in modifiers:
+            ok = actual_str.startswith(expected_str)
+
+        elif 'gte' in modifiers:
+            try:
+                ok = float(actual) >= float(candidate)
+            except (ValueError, TypeError):
+                ok = False
+
+        else:
+            ok = actual_str == expected_str
+
+        if ok:
+            return True
+
     return False
 
 def evaluate(rule,event):

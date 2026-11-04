@@ -1,0 +1,165 @@
+{
+  "project": "Cyberion ThreatShield",
+  "report_type": "Synthetic Single-Event Rule Testing",
+  "categories": {
+    "Windows": {
+      "rules_evaluated": 11,
+      "rules_with_matches": 11,
+      "rules_without_matches": 0
+    },
+    "Linux and Network": {
+      "rules_evaluated": 4,
+      "rules_with_matches": 4,
+      "rules_without_matches": 0
+    }
+  },
+  "overall": {
+    "rules_evaluated": 15,
+    "rules_with_matches": 15,
+    "rules_without_matches": 0,
+    "match_percentage": 100.0
+  },
+  "rules": [
+    {
+      "category": "Windows",
+      "rule": "Defender Real-time Monitoring Disabled",
+      "rule_id": "7a1a4ae2-e082-53bb-89bf-6efa2ab80bdd",
+      "matches": 1,
+      "events": [
+        "2026-10-28T10:12:00Z"
+      ]
+    },
+    {
+      "category": "Windows",
+      "rule": "Repeated Failed Logons",
+      "rule_id": "29990db0-cd02-539a-bce8-b57aa78ec4e8",
+      "matches": 1,
+      "events": [
+        "2026-10-28T10:07:00Z"
+      ]
+    },
+    {
+      "category": "Windows",
+      "rule": "Local User Account Created",
+      "rule_id": "4a36f413-70a4-5e78-a679-f5f474cbbfd3",
+      "matches": 1,
+      "events": [
+        "2026-10-28T10:08:00Z"
+      ]
+    },
+    {
+      "category": "Windows",
+      "rule": "New Windows Service Installation",
+      "rule_id": "f6dc3a7e-ca72-5011-8664-0982884b8240",
+      "matches": 1,
+      "events": [
+        3
+      ]
+    },
+    {
+      "category": "Windows",
+      "rule": "PowerShell Encoded Command Execution",
+      "rule_id": "6bd0193f-3d2f-5a99-b625-4250928f5d66",
+      "matches": 1,
+      "events": [
+        1
+      ]
+    },
+    {
+      "category": "Windows",
+      "rule": "Executable Launched from User Temp Directory",
+      "rule_id": "f374585b-4cc7-5274-8f52-b7e2a48c9881",
+      "matches": 1,
+      "events": [
+        "2026-10-28T10:11:00Z"
+      ]
+    },
+    {
+      "category": "Windows",
+      "rule": "Remote Interactive Logon (RDP)",
+      "rule_id": "5719c6a7-51f9-511e-98a4-5cd1270fae1e",
+      "matches": 1,
+      "events": [
+        "2026-10-28T10:09:00Z"
+      ]
+    },
+    {
+      "category": "Windows",
+      "rule": "Scheduled Task Created",
+      "rule_id": "c674665d-16c2-51f0-a870-b1ee745c8dc4",
+      "matches": 1,
+      "events": [
+        7
+      ]
+    },
+    {
+      "category": "Windows",
+      "rule": "Security Event Log Cleared",
+      "rule_id": "66cbb0dc-6bdb-5e3d-a490-639942a6dd92",
+      "matches": 1,
+      "events": [
+        6
+      ]
+    },
+    {
+      "category": "Windows",
+      "rule": "PowerShell Download Cradle",
+      "rule_id": "b8676130-bb3d-5a00-a259-b2ecec2af38a",
+      "matches": 1,
+      "events": [
+        2
+      ]
+    },
+    {
+      "category": "Windows",
+      "rule": "Potential LSASS Credential Dumping via Process Access",
+      "rule_id": "6b96f3d8-2db7-4db1-9ac4-7a36d7e6a001",
+      "matches": 1,
+      "events": [
+        "2026-10-28T10:10:00Z"
+      ]
+    },
+    {
+      "category": "Linux and Network",
+      "rule": "Linux SSH Authentication Failure",
+      "rule_id": "7a354b75-0212-5fc3-bfcb-b4bc2f4f8cd0",
+      "matches": 1,
+      "events": [
+        4
+      ]
+    },
+    {
+      "category": "Linux and Network",
+      "rule": "Linux sudo Command Execution",
+      "rule_id": "1b31d9fe-aa28-5166-baea-1e8a2e2c31d4",
+      "matches": 1,
+      "events": [
+        "2026-10-28T10:15:00Z"
+      ]
+    },
+    {
+      "category": "Linux and Network",
+      "rule": "Large Outbound Transfer",
+      "rule_id": "c8cc97a8-4f6c-596c-9164-1cae8682ed32",
+      "matches": 1,
+      "events": [
+        "2026-10-28T10:14:00Z"
+      ]
+    },
+    {
+      "category": "Linux and Network",
+      "rule": "DNS Query to Unusual High-Risk TLD",
+      "rule_id": "cc36ae29-5546-57d5-b208-40302b8e495a",
+      "matches": 1,
+      "events": [
+        5
+      ]
+    }
+  ],
+  "limitations": [
+    "Results are based on synthetic fixtures.",
+    "This is a custom smoke-test harness, not a full Sigma implementation.",
+    "Correlation rules are not evaluated.",
+    "Matches do not establish production detection effectiveness."
+  ]
+}

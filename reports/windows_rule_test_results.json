@@ -1,0 +1,90 @@
+[
+  {
+    "rule": "Defender Real-time Monitoring Disabled",
+    "rule_id": "7a1a4ae2-e082-53bb-89bf-6efa2ab80bdd",
+    "matches": 1,
+    "events": [
+      "2026-10-28T10:12:00Z"
+    ]
+  },
+  {
+    "rule": "Repeated Failed Logons",
+    "rule_id": "29990db0-cd02-539a-bce8-b57aa78ec4e8",
+    "matches": 1,
+    "events": [
+      "2026-10-28T10:07:00Z"
+    ]
+  },
+  {
+    "rule": "Local User Account Created",
+    "rule_id": "4a36f413-70a4-5e78-a679-f5f474cbbfd3",
+    "matches": 1,
+    "events": [
+      "2026-10-28T10:08:00Z"
+    ]
+  },
+  {
+    "rule": "New Windows Service Installation",
+    "rule_id": "f6dc3a7e-ca72-5011-8664-0982884b8240",
+    "matches": 1,
+    "events": [
+      3
+    ]
+  },
+  {
+    "rule": "PowerShell Encoded Command Execution",
+    "rule_id": "6bd0193f-3d2f-5a99-b625-4250928f5d66",
+    "matches": 1,
+    "events": [
+      1
+    ]
+  },
+  {
+    "rule": "Executable Launched from User Temp Directory",
+    "rule_id": "f374585b-4cc7-5274-8f52-b7e2a48c9881",
+    "matches": 1,
+    "events": [
+      "2026-10-28T10:11:00Z"
+    ]
+  },
+  {
+    "rule": "Remote Interactive Logon (RDP)",
+    "rule_id": "5719c6a7-51f9-511e-98a4-5cd1270fae1e",
+    "matches": 1,
+    "events": [
+      "2026-10-28T10:09:00Z"
+    ]
+  },
+  {
+    "rule": "Scheduled Task Created",
+    "rule_id": "c674665d-16c2-51f0-a870-b1ee745c8dc4",
+    "matches": 1,
+    "events": [
+      7
+    ]
+  },
+  {
+    "rule": "Security Event Log Cleared",
+    "rule_id": "66cbb0dc-6bdb-5e3d-a490-639942a6dd92",
+    "matches": 1,
+    "events": [
+      6
+    ]
+  },
+  {
+    "rule": "PowerShell Download Cradle",
+    "rule_id": "b8676130-bb3d-5a00-a259-b2ecec2af38a",
+    "matches": 1,
+    "events": [
+      2
+    ]
+  },
+  {
+    "rule": "Potential LSASS Credential Dumping via Process Access",
+    "rule_id": "6b96f3d8-2db7-4db1-9ac4-7a36d7e6a001",
+    "matches": 1,
+    "events": [
+      "2026-10-28T10:10:00Z"
+    ]
+  }
+]
